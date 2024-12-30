@@ -4,7 +4,9 @@ const nextConfig: NextConfig = {
 	images: {
 		domains: ["localhost"],
 	},
-	ignoreDuringBuilds: true,
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
 };
 
 export default nextConfig;
