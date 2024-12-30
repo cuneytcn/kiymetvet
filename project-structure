@@ -1,0 +1,28 @@
+veteriner-website/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx
+│   │   ├── layout.tsx
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── services/
+│   │   │   └── page.tsx
+│   │   ├── gallery/
+│   │   │   └── page.tsx
+│   │   ├── blog/
+│   │   │   └── page.tsx
+│   │   └── contact/
+│   │       └── page.tsx
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Footer.tsx
+│   │   └── ui/
+│   │       ├── Button.tsx
+│   │       └── Container.tsx
+│   └── styles/
+│       └── globals.css
+├── public/
+│   └── images/
+├── package.json
+└── tailwind.config.js 
