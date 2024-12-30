@@ -1,11 +1,16 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
-type Props = {
-	params: { slug: string };
-};
+interface PageProps {
+	params: {
+		slug: string;
+	};
+	searchParams: { [key: string]: string | string[] | undefined };
+}
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+	params,
+}: PageProps): Promise<Metadata> {
 	return {
 		title: "Blog Yazısı",
 		description: "Blog yazısı detayı",
@@ -23,7 +28,7 @@ export async function generateStaticParams() {
 	}));
 }
 
-export default function BlogPost({ params }: Props) {
+export default function BlogPost({ params, searchParams }: PageProps) {
 	// Gerçek uygulamada bu veriler API'den gelecek
 	const post = {
 		title: "Köpeklerde Aşılama Takvimi",
