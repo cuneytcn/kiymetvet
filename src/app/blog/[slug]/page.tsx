@@ -1,8 +1,18 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
-// Bu fonksiyon dinamik route'lar için gerekli
+type Props = {
+	params: { slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	return {
+		title: "Blog Yazısı",
+		description: "Blog yazısı detayı",
+	};
+}
+
 export async function generateStaticParams() {
-	// Gerçek uygulamada bu veriler API'den gelecek
 	const posts = [
 		{ slug: "kopeklerde-asilama-takvimi" },
 		{ slug: "kedilerde-beslenme" },
@@ -13,18 +23,7 @@ export async function generateStaticParams() {
 	}));
 }
 
-export async function generateMetadata({
-	params,
-}: {
-	params: { slug: string };
-}) {
-	return {
-		title: "Blog Yazısı",
-		description: "Blog yazısı detayı",
-	};
-}
-
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default function BlogPost({ params }: Props) {
 	// Gerçek uygulamada bu veriler API'den gelecek
 	const post = {
 		title: "Köpeklerde Aşılama Takvimi",
