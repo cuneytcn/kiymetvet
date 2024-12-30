@@ -13,6 +13,17 @@ export async function generateStaticParams() {
 	}));
 }
 
+export async function generateMetadata({
+	params,
+}: {
+	params: { slug: string };
+}) {
+	return {
+		title: "Blog Yazısı",
+		description: "Blog yazısı detayı",
+	};
+}
+
 export default function BlogPost({ params }: { params: { slug: string } }) {
 	// Gerçek uygulamada bu veriler API'den gelecek
 	const post = {
